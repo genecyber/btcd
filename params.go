@@ -31,7 +31,7 @@ var mainNetParams = params{
 	Params:  &chaincfg.MainNetParams,
 	rpcPort: "3764",
 	dnsSeeds: []string{
-		"104.236.26.26"
+		"104.236.26.26",
 	},
 }
 
