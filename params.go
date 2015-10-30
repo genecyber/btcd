@@ -29,15 +29,9 @@ type params struct {
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:  &chaincfg.MainNetParams,
-	rpcPort: "8334",
+	rpcPort: "3764",
 	dnsSeeds: []string{
-		"seed.bitcoin.sipa.be",
-		"dnsseed.bluematt.me",
-		"dnsseed.bitcoin.dashjr.org",
-		"seed.bitcoinstats.com",
-		"seed.bitnodes.io",
-		"bitseed.xf2.org",
-		"seed.bitcoin.jonasschnelli.ch",
+		"104.236.26.26"
 	},
 }
 
