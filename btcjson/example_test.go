@@ -20,7 +20,7 @@ func ExampleMarshalCmd() {
 	// optional fields.  Also, notice the call to btcjson.Bool which is a
 	// convenience function for creating a pointer out of a primitive for
 	// optional parameters.
-	blockHash := "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+	blockHash := "100000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
 	gbCmd := btcjson.NewGetBlockCmd(blockHash, btcjson.Bool(false), nil)
 
 	// Marshal the command to the format suitable for sending to the RPC
@@ -38,7 +38,7 @@ func ExampleMarshalCmd() {
 	fmt.Printf("%s\n", marshalledBytes)
 
 	// Output:
-	// {"jsonrpc":"1.0","method":"getblock","params":["000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",false],"id":1}
+	// {"jsonrpc":"1.0","method":"getblock","params":["100000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",false],"id":1}
 }
 
 // This example demonstrates how to unmarshal a JSON-RPC request and then
@@ -46,7 +46,7 @@ func ExampleMarshalCmd() {
 func ExampleUnmarshalCmd() {
 	// Ordinarily this would be read from the wire, but for this example,
 	// it is hard coded here for clarity.
-	data := []byte(`{"jsonrpc":"1.0","method":"getblock","params":["000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",false],"id":1}`)
+	data := []byte(`{"jsonrpc":"1.0","method":"getblock","params":["100000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",false],"id":1}`)
 
 	// Unmarshal the raw bytes from the wire into a JSON-RPC request.
 	var request btcjson.Request
@@ -88,7 +88,7 @@ func ExampleUnmarshalCmd() {
 	fmt.Println("VerboseTx:", *gbCmd.VerboseTx)
 
 	// Output:
-	// Hash: 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+	// Hash: 100000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
 	// Verbose: false
 	// VerboseTx: false
 }

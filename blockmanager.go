@@ -787,6 +787,7 @@ func (b *blockManager) handleHeadersMsg(hmsg *headersMsg) {
 	// The remote peer is misbehaving if we didn't request headers.
 	msg := hmsg.headers
 	numHeaders := len(msg.Headers)
+	//bmgrLog.Warnf("Shannon says: headers? %s", msg.Headers)
 	if !b.headersFirstMode {
 		bmgrLog.Warnf("Got %d unrequested headers from %s -- "+
 			"disconnecting", numHeaders, hmsg.peer.Addr())
@@ -806,7 +807,7 @@ func (b *blockManager) handleHeadersMsg(hmsg *headersMsg) {
 	for _, blockHeader := range msg.Headers {
 		blockHash := blockHeader.BlockSha()
 		finalHash = &blockHash
-
+		bmgrLog.Warnf("Shannon Says received header %s", blockHash)
 		// Ensure there is a previous header to compare against.
 		prevNodeEl := b.headerList.Back()
 		if prevNodeEl == nil {
@@ -827,6 +828,9 @@ func (b *blockManager) handleHeadersMsg(hmsg *headersMsg) {
 				b.startHeader = e
 			}
 		} else {
+			//bmgrLog.Warnf("Shannoh Says: headerNode{} %s", b)
+			bmgrLog.Warnf("Shannon Says: Prev Node sha: %s", prevNode.sha)
+			bmgrLog.Warnf("Shannon Says: blockheader prev block: %s", &blockHeader.PrevBlock)
 			bmgrLog.Warnf("Received block header that does not "+
 				"properly connect to the chain from peer %s "+
 				"-- disconnecting", hmsg.peer.Addr())

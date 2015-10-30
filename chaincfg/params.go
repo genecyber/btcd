@@ -192,7 +192,7 @@ var MainNetParams = Params{
 	RelayNonStdTxs: false,
 
 	// Address encoding magics
-	PubKeyHashAddrID: 0x3D, // starts with 1
+	PubKeyHashAddrID: 61, // starts with 1
 	ScriptHashAddrID: 0x7B, // starts with 3
 	PrivateKeyID:     0xbd, // starts with 5 (uncompressed) or K (compressed)
 

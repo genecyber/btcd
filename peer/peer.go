@@ -25,7 +25,7 @@ import (
 
 const (
 	// MaxProtocolVersion is the max protocol version the peer supports.
-	MaxProtocolVersion = 70011
+	MaxProtocolVersion = 70002
 
 	// outputBufferSize is the number of elements the output channels use.
 	outputBufferSize = 50
